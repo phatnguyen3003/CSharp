@@ -11,8 +11,12 @@ namespace Tuan1
             Console.Write("Nhap so nguyen y: ");
             int y = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"ket qua {x} mu {y} la: {Math.Pow(x, y)}");
+            Console.WriteLine($"ket qua {x} mu {y} la: {Bai3_Power(x, y)}");
 
+        }
+        public static double Bai3_Power(int x, int y)
+        {
+            return Math.Pow(x, y);
         }
     }
 }

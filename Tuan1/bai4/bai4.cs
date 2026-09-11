@@ -31,7 +31,7 @@ namespace Tuan1
                 return;
             }
 
-            Console.WriteLine($"ket qua {x} mu {y} la: {Math.Pow(x, y)}");
+            Console.WriteLine($"ket qua {x} mu {y} la: {Bai3.Bai3_Power(x, y)}");
 
         }
     }

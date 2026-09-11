@@ -7,4 +7,5 @@ using Tuan1;
 //Bai2.Run();
 //.Run();
 //Bai4.Run();
-Bai5.Run();
+//Bai5.Run();
+Bai6.Run();

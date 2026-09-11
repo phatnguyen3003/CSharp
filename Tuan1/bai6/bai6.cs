@@ -5,10 +5,11 @@ namespace Tuan1
 {
     public class Bai6
     {
-        public static void Run()
+        static int[] mynums = new int[3];
+        static int max = int.MinValue;
+        public static int Find()
         {
-            int[] mynums = new int[3];
-            int max = -9999999;
+
             Console.WriteLine("Nhap 3 so nguyen");
             for (int i = 0; i < 3; i++)
             {
@@ -25,6 +26,15 @@ namespace Tuan1
                     max = mynums[i];
                 }
             }
+
+            return max;
+
+
+        }
+
+        public static void Run()
+        {
+            Find();
 
             Console.Write($"So lon nhat trong3 so: {mynums[0]}, {mynums[1]}, {mynums[2]} la: {max}");
         }

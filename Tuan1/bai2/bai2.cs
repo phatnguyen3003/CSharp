@@ -10,7 +10,7 @@ namespace Tuan1
         {
             Console.Write("Nhap ho ten cua ban: ");
             string name = Console.ReadLine();
-            Console.WriteLine($"\n Chao ban: {name}");
+            Console.WriteLine($"\n Chao ban: {name}!");
         }
     }
 

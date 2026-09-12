@@ -1,4 +1,5 @@
 using System.IO;
+using SharedLibs;
 
 namespace Tuan1
 {
@@ -7,13 +8,13 @@ namespace Tuan1
         public static bool Prime_checking(int n)
         {
 
-            if (n < 2)
+            if (n < 2)  //check for n lower than 2
             {
                 return false;
             }
 
 
-            for (int i = 2; i <= Math.Sqrt(n); i++)
+            for (int i = 2; i <= Math.Sqrt(n); i++) //prime number checking logic
             {
                 if (n % i == 0)
                 {
@@ -25,10 +26,9 @@ namespace Tuan1
 
         public static void Run()
         {
-            Console.Write("Nhap n: ");
+            int n = SharedLibs.InputHelper.InputNatural("n");
             try
             {
-                int n = int.Parse(Console.ReadLine());
                 if (Prime_checking(n))
                 {
                     Console.Write($"{n} la so nguyen to");

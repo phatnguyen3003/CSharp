@@ -9,4 +9,5 @@ using Tuan1;
 //Bai4.Run();
 //Bai5.Run();
 //Bai6.Run();
-Bai7.Run();
+//Bai7.Run();
+Bai8.Run();

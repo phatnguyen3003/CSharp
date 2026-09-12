@@ -5,7 +5,7 @@ namespace Tuan1
 {
     public class Bai7
     {
-        public static bool Prime_checking(int n)
+        public static bool Bai7_Prime_checking(int n)
         {
 
             if (n < 2)  //check for n lower than 2
@@ -29,7 +29,7 @@ namespace Tuan1
             int n = SharedLibs.InputHelper.InputNatural("n");
             try
             {
-                if (Prime_checking(n))
+                if (Bai7_Prime_checking(n))
                 {
                     Console.Write($"{n} la so nguyen to");
                 }

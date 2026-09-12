@@ -9,6 +9,7 @@ namespace Tuan1
         public static void Run()
         {
             Console.Write("Nhap ho ten cua ban: ");
+            // Input name and greet user
             string name = Console.ReadLine();
             Console.WriteLine($"\n Chao ban: {name}!");
         }

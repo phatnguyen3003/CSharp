@@ -12,6 +12,7 @@ namespace Tuan1
             int[]? NumsArray = null;
             do
             {
+                // Management function menu
                 Console.WriteLine("\n================ MENU ================");
                 Console.WriteLine("1. Nhap mang gom n phan tu");
                 Console.WriteLine("2. In mang ra man hinh");
@@ -52,6 +53,7 @@ namespace Tuan1
                     case 3:
                         if (NumsArray != null)
                         {
+                            // Find min and max in array
                             int max = int.MinValue;
                             int min = int.MaxValue;
 
@@ -85,7 +87,7 @@ namespace Tuan1
                             {
                                 if (Bai7.Bai7_Prime_checking(NumsArray[i]))
                                 {
-                                    //PrimesArray[PrimesArray.Length - 1] = NumsArray[i];
+                                    // Assign prime values into new array
                                     Array.Resize(ref PrimesArray, PrimesArray.Length + 1);
                                     PrimesArray[PrimesArray.Length - 1] = NumsArray[i];
 

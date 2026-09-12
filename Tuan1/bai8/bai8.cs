@@ -6,6 +6,7 @@ namespace Tuan1
     {
         public static void Swap(ref double x, ref double y)
         {
+            // Swap values of two variables
             double temp = x;
             x = y;
             y = temp;

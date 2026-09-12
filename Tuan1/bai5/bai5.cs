@@ -11,6 +11,7 @@ namespace Tuan1
             double y = -9999;
             do
             {
+                // Create selection menu
                 Console.WriteLine("\n================ MENU ================");
                 Console.WriteLine("1. Nhap hai gia tri so thuc cho x, y");
                 Console.WriteLine("2. Tinh x^y");
@@ -28,6 +29,7 @@ namespace Tuan1
                         y = double.Parse(Console.ReadLine());
                         break;
                     case 2:
+                        // Calculate power when data is available
                         if (!(x == -9999 || y == -9999))
                         {
                             Console.WriteLine($"mu cua {x} va {y} la: {Math.Pow(x, y)}");

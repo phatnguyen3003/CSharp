@@ -6,6 +6,7 @@ namespace Tuan1
     {
         public static int WordsCount(string s)
         {
+            // Count words in a string
             if (string.IsNullOrWhiteSpace(s))
             {
                 return 0;
@@ -18,6 +19,7 @@ namespace Tuan1
         {
             string text = InputHelper.InputString("doan van ban/chuoi");
 
+            // Convert string to lowercase
             Console.WriteLine($"\nChuoi ky tu thuong : {text.ToLower()}");
             Console.WriteLine($"Chuoi ky tu hoa    : {text.ToUpper()}");
             Console.WriteLine($"So tu trong chuoi   : {WordsCount(text)}");

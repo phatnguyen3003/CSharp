@@ -8,13 +8,14 @@ namespace Tuan1
         public static bool Bai7_Prime_checking(int n)
         {
 
-            if (n < 2)  //check for n lower than 2
+            // Check prime number
+            if (n < 2)  // Reject values below 2
             {
                 return false;
             }
 
 
-            for (int i = 2; i <= Math.Sqrt(n); i++) //prime number checking logic
+            for (int i = 2; i <= Math.Sqrt(n); i++) // Check divisibility up to sqrt of n
             {
                 if (n % i == 0)
                 {

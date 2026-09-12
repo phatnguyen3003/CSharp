@@ -19,6 +19,7 @@ namespace Tuan1
 
             double MaxVal, MinVal;
 
+            // Find max and min among three
             FindMinMax(a, b, c, out MaxVal, out MinVal);
 
             Console.WriteLine($"Gia tri lon nhat trong ba so {a}, {b}, {c} la: {MaxVal}");

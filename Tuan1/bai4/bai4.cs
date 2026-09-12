@@ -9,6 +9,7 @@ namespace Tuan1
         {
             int x = 0;
             int y = 0;
+            // Validate input data
             Console.Write("Nhap so nguyen x: ");
             try
             {

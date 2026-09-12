@@ -6,6 +6,7 @@ namespace Tuan1
     {
         public static string RevertString(string s)
         {
+            // Reverse string using array
             char[] stringarray = s.ToCharArray();
             Array.Reverse(stringarray);
             return new string(stringarray);

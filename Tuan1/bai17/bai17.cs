@@ -29,6 +29,7 @@ namespace Tuan1
 
         public static void SplitOddEven(int[] NumsArray, int n, int m, out int[] OddArray, out int[] EvenArray)
         {
+            // Separate even and odd numbers
             OddArray = new int[0];
             EvenArray = new int[0];
             for (int i = 0; i < (n * m); i++)

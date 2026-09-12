@@ -7,6 +7,7 @@ namespace SharedLibs
     {
         public static int InputNatural(string variableName)
         {
+            // Read a non-negative integer
             int value;
             Console.Write($"Nhap so tu nhien {variableName}: ");
 
@@ -20,6 +21,7 @@ namespace SharedLibs
 
         public static double InputDouble(string variableName)
         {
+            // Read a floating-point number
             double value;
             Console.Write($"Nhap so thuc {variableName}: ");
 
@@ -33,6 +35,7 @@ namespace SharedLibs
 
         public static string InputString(string variableName)
         {
+            // Read a non-empty string
             Console.Write($"Nhap chuoi {variableName}: ");
             string? input = Console.ReadLine();
             while (string.IsNullOrWhiteSpace(input))
@@ -45,6 +48,7 @@ namespace SharedLibs
 
         public static int InputInt(string variableName)
         {
+            // Read an integer value
             int value;
             Console.Write($"Nhap so nguyen {variableName}: ");
 

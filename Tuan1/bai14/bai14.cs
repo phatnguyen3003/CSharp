@@ -18,6 +18,7 @@ namespace Tuan1
 
         public double CalculateSalary()
         {
+            // Calculate salary after fine
             double fine = AbsentDays * 100000;
             double finalSalary = BaseSalary - fine;
 

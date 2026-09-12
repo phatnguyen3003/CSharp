@@ -10,6 +10,7 @@ namespace Tuan1
         public static int Find()
         {
 
+            // Find the largest of three
             Console.WriteLine("Nhap 3 so nguyen");
             for (int i = 0; i < 3; i++)
             {

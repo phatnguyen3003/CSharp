@@ -29,6 +29,7 @@ namespace Tuan1
 
         public void Display()
         {
+            // Display student information
             Console.WriteLine("\n--- Thong tin sinh vien da nhap ---");
             Console.WriteLine($"Ma sinh vien : {Id}");
             Console.WriteLine($"Ho va ten    : {FullName}");

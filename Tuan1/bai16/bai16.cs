@@ -15,6 +15,7 @@ namespace Tuan1
                 namesArray[i] = InputHelper.InputString($"ho ten nguoi thu {i + 1}").Trim();
             }
 
+            // Sort the name list
             Array.Sort(namesArray);
 
             Console.WriteLine("\n--- Danh sach ho ten sau khi sap xep tang dan (A-Z) ---");

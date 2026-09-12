@@ -7,6 +7,7 @@ namespace Tuan1
     {
         public static bool IsSymmetrical(string s)
         {
+            // Check palindrome string
             int left = 0;
             int right = s.Length - 1;
 

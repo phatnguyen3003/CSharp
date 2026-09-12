@@ -17,7 +17,7 @@ namespace Tuan1
             }
             catch (FormatException)
             {
-                Console.Write($"{x} khong phai so nguyen");
+                Console.Write($"x khong phai so nguyen");
                 return;
             }
 
@@ -28,7 +28,7 @@ namespace Tuan1
             }
             catch (FormatException)
             {
-                Console.Write($"{y} khong phai so nguyen");
+                Console.Write($"y khong phai so nguyen");
                 return;
             }
 

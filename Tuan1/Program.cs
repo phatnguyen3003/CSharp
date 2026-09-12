@@ -12,4 +12,5 @@ using Tuan1;
 //Bai7.Run();
 //Bai8.Run();
 //Bai9.Run();
-Bai10.Run();
+//Bai10.Run();
+Bai11.Run();

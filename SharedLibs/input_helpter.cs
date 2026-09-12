@@ -30,5 +30,17 @@ namespace SharedLibs
 
             return value;
         }
+
+        public static string InputString(string variableName)
+        {
+            Console.Write($"Nhap chuoi {variableName}: ");
+            string? input = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(input))
+            {
+                Console.Write($"Chuoi khong duoc de trong. Nhap lai chuoi {variableName}: ");
+                input = Console.ReadLine();
+            }
+            return input;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace SharedLibs
 
             while (!int.TryParse(Console.ReadLine(), out value) || value < 0)
             {
-                Console.Write($"Gia tri khong hop le (phai la so nguyên >= 0). Nhap lai {variableName}: ");
+                Console.Write($"Gia tri khong hop le (phai la so nguyen >= 0). Nhap lai {variableName}: ");
             }
 
             return value;
@@ -23,9 +23,9 @@ namespace SharedLibs
             double value;
             Console.Write($"Nhap so thuc {variableName}: ");
 
-            while (!double.TryParse(Console.ReadLine(), out value) || value < 0)
+            while (!double.TryParse(Console.ReadLine(), out value))
             {
-                Console.Write($"Gia tri khong hop le (phai la so nguyên >= 0). Nhap lai {variableName}: ");
+                Console.Write($"Gia tri khong hop le. Nhap lai {variableName}: ");
             }
 
             return value;
@@ -41,6 +41,19 @@ namespace SharedLibs
                 input = Console.ReadLine();
             }
             return input;
+        }
+
+        public static int InputInt(string variableName)
+        {
+            int value;
+            Console.Write($"Nhap so nguyen {variableName}: ");
+
+            while (!int.TryParse(Console.ReadLine(), out value))
+            {
+                Console.Write($"Gia tri khong hop le (phai la so nguyen). Nhap lai {variableName}: ");
+            }
+
+            return value;
         }
     }
 }

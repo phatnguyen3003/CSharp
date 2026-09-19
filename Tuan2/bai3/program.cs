@@ -21,7 +21,7 @@ namespace Tuan2
                 return;
             }
 
-            // 1. Kiểm thử Default Constructor và Input/Output
+            //Default Constructor và Input/Output
             Console.WriteLine("--- NHAP THONG TIN PERSON 1 ---");
             Person p1 = new Person();
             p1.Input();
@@ -29,12 +29,12 @@ namespace Tuan2
             Console.WriteLine("\n--- THONG TIN PERSON 1 ---");
             p1.Output();
 
-            // 2. Kiểm thử Copy Constructor
+            //Copy Constructor
             Console.WriteLine("\n--- SAO CHEP SANG PERSON 2 (COPY CONSTRUCTOR) ---");
             Person p2 = new Person(p1);
             p2.Output();
 
-            // 3. Kiểm thử phương thức IsLiving()
+            //IsLiving()
             Console.WriteLine($"\nPerson 1 con song hay khong? -> {p1.IsLiving()}");
         }
     }

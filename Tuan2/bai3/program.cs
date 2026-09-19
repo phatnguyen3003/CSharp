@@ -5,6 +5,22 @@ namespace Tuan2
     {
         static void Main(string[] args)
         {
+            if (args.Length > 0 && args[0] == "test")
+            {
+                Console.WriteLine("===================================");
+                Bai3Tests.TestDefaultConstructor();
+                Bai3Tests.TestId();
+                Bai3Tests.TestName();
+                Bai3Tests.TestYob();
+                Bai3Tests.TestYod();
+                Bai3Tests.TestIsLivingTrue();
+                Bai3Tests.TestIsLivingFalse();
+                Bai3Tests.TestCopyConstructor();
+                Bai3Tests.TestOutputLiving();
+                Bai3Tests.TestOutputDead();
+                return;
+            }
+
             // 1. Kiểm thử Default Constructor và Input/Output
             Console.WriteLine("--- NHAP THONG TIN PERSON 1 ---");
             Person p1 = new Person();

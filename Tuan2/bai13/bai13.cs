@@ -2,7 +2,7 @@ using System;
 
 namespace Tuan2
 {
-    public class ArraySortTinh_Bai13
+    public class ArraySort_Bai13
     {
         // ham ho tro xap xep theo ten cua danh sach lay tu bai 12
         public static void SapXepTheoTen(NhanVien[] ds)

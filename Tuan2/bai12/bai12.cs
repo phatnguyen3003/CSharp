@@ -3,7 +3,7 @@ using SharedLibs;
 
 namespace Tuan2
 {
-    public class NhanVien
+    public class NhanVien : IComparable<NhanVien>
     {
         // Properties
         public string HoTen { get; set; }
@@ -53,6 +53,17 @@ namespace Tuan2
         public override string ToString()
         {
             return $"Ho ten: {HoTen,-20} | Luong co ban: {MucLuong,12:N0} VNĐ | So ngay vang: {SoNgayVang,2} | Luong thuc nhan: {TinhLuong(),12:N0} VNĐ";
+        }
+
+
+
+        public int CompareTo(NhanVien? other) // them IComparable va ham compare to de dung cho bai 13
+        {
+            if (other == null)
+            {
+                return 0;
+            }
+            return other.TinhLuong().CompareTo(this.TinhLuong());
         }
     }
 

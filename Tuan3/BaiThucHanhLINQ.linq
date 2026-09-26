@@ -27,7 +27,8 @@ namespace BaiThucHanhLINQ
 		static void Main()
 		{
 			//Bai21();
-			Bai22();
+			//Bai22();
+			Bai31();
 		}
 		
 		static void Bai21()
@@ -79,6 +80,52 @@ namespace BaiThucHanhLINQ
 						where !string.IsNullOrEmpty(w) && char.IsUpper(w[0])
 						select w;
 			kqD.Dump("-------------Bai 2.2.d) mang ket qua sau khi truy van tim tu co chu cai dau in hoa: --------------");
+		}
+		
+		static void Bai31()
+		{
+			int[] mangSo = { 50, 42, 12, 3, 9, 8, 1, 50, 3, 42, 85 };
+			
+			var kqA_1 = mangSo.Length;
+			kqA_1.Dump("-------------Bai 3.1.a) so phan tu cua mang: --------------");
+			
+			var kqA_2 = (from n in mangSo
+							where n %2 == 0
+							select n).Count();
+			kqA_2.Dump("-------------Bai 3.1.b) so phan tu chan cua mang: --------------");
+			
+			var kqA_3 = (from n in mangSo
+							where n %2 != 0
+							select n).Count();
+			kqA_3.Dump("-------------Bai 3.1.c) so phan tu le cua mang: --------------");
+			
+			
+			// 1. Tính tổng các giá trị
+			var kqB_Tong = mangSo.Sum();
+			kqB_Tong.Dump("-------------Bai 3.1.b1) Tong cac gia tri trong mang: --------------");
+			
+			// 2. Tìm giá trị lớn nhất
+			var kqB_Max = mangSo.Max();
+			kqB_Max.Dump("-------------Bai 3.1.b2) Gia tri lon nhat: --------------");
+			
+			// 3. Tìm giá trị nhỏ nhất
+			var kqB_Min = mangSo.Min();
+			kqB_Min.Dump("-------------Bai 3.1.b3) Gia tri nho nhat: --------------");
+			
+			
+			
+			var kqC = mangSo.Distinct().Count();
+			kqC.Dump("-------------Bai 3.1.c) So gia tri khac nhau trong mang: --------------");
+			
+			
+			var kqD = from n in mangSo
+	          group n by n % 5 into g
+	          select new { 
+	              SoDu = g.Key, 
+	              CacPhanTu = string.Join(", ", g) 
+	          };
+
+			kqD.Dump("-------------Bai 3.1.d) Phan nhom theo so du khi chia cho 5: --------------");
 		}
 	}
 

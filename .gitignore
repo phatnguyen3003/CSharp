@@ -480,3 +480,36 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# IDE & Editor caches
+.vscode/
+.idea/
+*.log
+
+# Temporary / Output files (Word documents and PDF files)
+~$*.docx
+*.docx
+*.doc
+*.pdf

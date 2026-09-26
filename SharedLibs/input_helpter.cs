@@ -5,16 +5,28 @@ namespace SharedLibs
 {
     public static class InputHelper
     {
-        public static int InputNatural(string variableName)
+        public static int InputNatural(string variableName, bool largerthan0 = false)
         {
             // Read a non-negative integer
             int value;
-            Console.Write($"Nhap so tu nhien {variableName}: ");
+            Console.Write($"Nhap {variableName}: ");
 
-            while (!int.TryParse(Console.ReadLine(), out value) || value < 0)
+            if (!largerthan0)
             {
-                Console.Write($"Gia tri khong hop le (phai la so nguyen >= 0). Nhap lai {variableName}: ");
+                while (!int.TryParse(Console.ReadLine(), out value) || value < 0)
+                {
+                    Console.Write($"Gia tri khong hop le (phai la so nguyen >= 0). Nhap lai {variableName}: ");
+                }
             }
+            else
+            {
+                while (!int.TryParse(Console.ReadLine(), out value) || value <= 0)
+                {
+                    Console.Write($"Gia tri khong hop le (phai la so nguyen > 0). Nhap lai {variableName}: ");
+                }
+            }
+
+
 
             return value;
         }
@@ -23,7 +35,7 @@ namespace SharedLibs
         {
             // Read a floating-point number
             double value;
-            Console.Write($"Nhap so thuc {variableName}: ");
+            Console.Write($"Nhap {variableName}: ");
 
             while (!double.TryParse(Console.ReadLine(), out value))
             {
@@ -36,7 +48,7 @@ namespace SharedLibs
         public static string InputString(string variableName)
         {
             // Read a non-empty string
-            Console.Write($"Nhap chuoi {variableName}: ");
+            Console.Write($"Nhap {variableName}: ");
             string? input = Console.ReadLine();
             while (string.IsNullOrWhiteSpace(input))
             {
@@ -50,7 +62,7 @@ namespace SharedLibs
         {
             // Read an integer value
             int value;
-            Console.Write($"Nhap so nguyen {variableName}: ");
+            Console.Write($"Nhap {variableName}: ");
 
             while (!int.TryParse(Console.ReadLine(), out value))
             {

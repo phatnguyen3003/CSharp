@@ -1,5 +1,5 @@
 using System.IO;
-
+using SharedLibs;
 namespace Tuan1
 {
     public class Bai5
@@ -19,14 +19,12 @@ namespace Tuan1
                 Console.WriteLine("4. Thoat");
                 Console.Write("Chon chuc nang: ");
 
-                choose = int.Parse(Console.ReadLine());
+                choose = InputHelper.InputNatural("cho lua chon cua ban");
                 switch (choose)
                 {
                     case 1:
-                        Console.Write("Nhap so thuc x: ");
-                        x = double.Parse(Console.ReadLine());
-                        Console.Write("Nhap so thuc y: ");
-                        y = double.Parse(Console.ReadLine());
+                        x = InputHelper.InputDouble("x");
+                        y = InputHelper.InputDouble("y");
                         break;
                     case 2:
                         // Calculate power when data is available

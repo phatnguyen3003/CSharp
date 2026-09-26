@@ -51,7 +51,6 @@ namespace Tuan2
             {
                 Console.WriteLine();
                 Display();
-                Console.Write("Thực hiện: ");
                 choice = SharedLibs.InputHelper.InputInt("lua chon");
 
                 if (choice > 0 && choice <= items.Count)
@@ -64,15 +63,13 @@ namespace Tuan2
                     // thuc thi hanh dong tuong ung
                     items[choice - 1].Action?.Invoke();
                 }
-                else if (choice != 0)
+                else if (choice == 0)
                 {
-                    Console.WriteLine("lua chon khong hop le!");
+                    Console.WriteLine("\nĐã thoát chương trình!");
                 }
-
                 else
                 {
-                    Console.WriteLine("vui long nhap so nguyen!");
-                    choice = -1;
+                    Console.WriteLine("\nLựa chọn không hợp lệ! Vui lòng chọn lại.");
                 }
             } while (choice != 0);
         }

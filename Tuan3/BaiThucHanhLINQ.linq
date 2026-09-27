@@ -28,7 +28,8 @@ namespace BaiThucHanhLINQ
 		{
 			//Bai21();
 			//Bai22();
-			Bai31();
+			//Bai31();
+			Bai32();
 		}
 		
 		static void Bai21()
@@ -126,6 +127,43 @@ namespace BaiThucHanhLINQ
 	          };
 
 			kqD.Dump("-------------Bai 3.1.d) Phan nhom theo so du khi chia cho 5: --------------");
+		}
+		
+		static void Bai32()
+		{
+			string[] monAn = { "Bún bò Huế", "Hủ tiếu heo", "Bánh canh", "Bánh mì",
+				"Nước Cà phê", "Mì quảng", "Cơm tấm", "Nước Chanh dây", "Mì xào",
+				"Bún riêu", "Bánh cuốn", "Mì gói", "Bún chả", "Hủ tiếu Nam vang" };
+				
+			// a)
+			
+			int doDaiNganNhat = monAn.Min(s => s.Length);
+			int doDaiDaiNhat = monAn.Max(s => s.Length);
+			
+			var kqA_1 = monAn.Where(s => s.Length == doDaiNganNhat);
+			kqA_1.Dump($"-------------Bai 3.2.a) Mon an ngan nhat ({doDaiNganNhat} ky tu): --------------");
+			
+			var kqA_2 = monAn.Where(s => s.Length == doDaiDaiNhat);
+			kqA_2.Dump($"-------------Bai 3.2.a) Mon an dai nhat ({doDaiDaiNhat} ky tu): --------------");
+			
+			
+			
+			var kqB = from monan in monAn
+			         group monan by monan.Split(' ')[0] into tu
+			         select new { 
+			             TuDauTien = tu.Key, 
+			             CacMonAn = string.Join(", ", tu) 
+			         };
+			
+			kqB.Dump("-------------Bai 3.2.b) Phan nhom theo tu dau tien: --------------");
+			
+			var kqC = from monan in monAn
+						group monan by monan.Split(' ')[0] into tu
+						where tu.Key == "Bánh"
+						select tu.Count();
+						
+			kqC.Dump("-------------Bai 3.2.c) So tu bat dau bang 'Banh': --------------");
+		
 		}
 	}
 

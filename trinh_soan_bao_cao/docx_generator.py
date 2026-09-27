@@ -305,26 +305,27 @@ def generate_report_docx(project: ReportProject, output_path: str) -> None:
             <w:p><w:pPr><w:spacing w:before="100" w:after="60"/></w:pPr></w:p>
             ''')
 
-        # 2. Sơ đồ lớp (Class Diagram)
-        doc_body.append('''
+        # 2. Sơ đồ lớp (Class Diagram) — chỉ thêm khi include_diagram=True
+        if ex.include_diagram:
+            doc_body.append('''
         <w:p>
             <w:pPr><w:pStyle w:val="Heading2"/></w:pPr>
             <w:r><w:t>2. Sơ đồ lớp (Class Diagram)</w:t></w:r>
         </w:p>
         ''')
 
-        # Check if user provided an image
-        has_image = False
-        img_r_id = ""
-        if ex.diagram_image_path and os.path.exists(ex.diagram_image_path):
-            img_abs = os.path.abspath(ex.diagram_image_path)
-            if img_abs in image_rel_id_map:
-                img_r_id = image_rel_id_map[img_abs][0]
-                has_image = True
+            # Check if user provided an image
+            has_image = False
+            img_r_id = ""
+            if ex.diagram_image_path and os.path.exists(ex.diagram_image_path):
+                img_abs = os.path.abspath(ex.diagram_image_path)
+                if img_abs in image_rel_id_map:
+                    img_r_id = image_rel_id_map[img_abs][0]
+                    has_image = True
 
-        if has_image:
-            # Insert actual drawing image in OpenXML
-            doc_body.append(f'''
+            if has_image:
+                # Insert actual drawing image in OpenXML
+                doc_body.append(f'''
             <w:p>
                 <w:pPr>
                     <w:jc w:val="center"/>
@@ -383,9 +384,9 @@ def generate_report_docx(project: ReportProject, output_path: str) -> None:
                 </w:r>
             </w:p>
             ''')
-        else:
-            # Insert Placeholder
-            doc_body.append('''
+            else:
+                # Insert Placeholder
+                doc_body.append('''
             <w:tbl>
                 <w:tblPr>
                     <w:tblW w:w="9200" w:type="dxa"/>
@@ -443,11 +444,22 @@ def generate_report_docx(project: ReportProject, output_path: str) -> None:
             <w:p><w:pPr><w:spacing w:before="100" w:after="60"/></w:pPr></w:p>
             ''')
 
-        # 3. Mã nguồn C# (Source code)
-        doc_body.append('''
+        # Đánh số thứ tự mục tự động dựa vào include_diagram
+        _n = 1  # Mục 1: Đề bài (luôn có)
+        _code_num   = (_n := _n + 1) if not ex.include_diagram else 3
+        _output_num = (_code_num + 1)
+        _idea_num   = (_output_num + 1)
+        if ex.include_diagram:
+            _code_num, _output_num, _idea_num = 3, 4, 5
+        else:
+            _code_num, _output_num, _idea_num = 2, 3, 4
+
+
+        # Mã nguồn C# (Source code) — số thứ tự phụ thuộc include_diagram
+        doc_body.append(f'''
         <w:p>
             <w:pPr><w:pStyle w:val="Heading2"/></w:pPr>
-            <w:r><w:t>3. Mã nguồn C# (Source Code)</w:t></w:r>
+            <w:r><w:t>{_code_num}. Mã nguồn C# (Source Code)</w:t></w:r>
         </w:p>
         ''')
 
@@ -523,11 +535,11 @@ def generate_report_docx(project: ReportProject, output_path: str) -> None:
                 <w:p><w:pPr><w:spacing w:before="60" w:after="60"/></w:pPr></w:p>
                 ''')
 
-        # 4. Kết quả chạy thử (Test Run Output)
-        doc_body.append('''
+        # Kết quả chạy thử (Test Run Output)
+        doc_body.append(f'''
         <w:p>
             <w:pPr><w:pStyle w:val="Heading2"/></w:pPr>
-            <w:r><w:t>4. Kết quả chạy thử (Test Run / Output)</w:t></w:r>
+            <w:r><w:t>{_output_num}. Kết quả chạy thử (Test Run / Output)</w:t></w:r>
         </w:p>
         ''')
 
@@ -583,13 +595,14 @@ def generate_report_docx(project: ReportProject, output_path: str) -> None:
         <w:p><w:pPr><w:spacing w:before="100" w:after="60"/></w:pPr></w:p>
         ''')
 
-        # 5. Ý tưởng bài làm / Thiết kế giải pháp (Idea / Design)
+        # Ý tưởng bài làm / Thiết kế giải pháp (Idea / Design)
         doc_body.append(f'''
         <w:p>
             <w:pPr><w:pStyle w:val="Heading2"/></w:pPr>
-            <w:r><w:t>5. Ý tưởng bài làm và Thiết kế giải pháp</w:t></w:r>
+            <w:r><w:t>{_idea_num}. Ý tưởng bài làm và Thiết kế giải pháp</w:t></w:r>
         </w:p>
         ''')
+
 
         idea_content = idea_text if idea_text.strip() else "(Chưa có phân tích ý tưởng bài làm)"
         doc_body.append(f'''

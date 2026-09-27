@@ -31,6 +31,7 @@ class Exercise:
         folder: str = "",
         problem: str = "",
         diagram_image_path: str = "",
+        include_diagram: bool = True,
         code_files: Optional[List[CodeFile]] = None,
         manual_code_filename: str = "Program.cs",
         manual_code_content: str = "",
@@ -41,6 +42,7 @@ class Exercise:
         self.folder = folder
         self.problem = problem
         self.diagram_image_path = diagram_image_path
+        self.include_diagram = include_diagram  # Nếu False: bỏ mục sơ đồ lớp, đánh số lại
         self.code_files = code_files if code_files is not None else []
         self.manual_code_filename = manual_code_filename
         self.manual_code_content = manual_code_content
@@ -64,6 +66,7 @@ class Exercise:
             "folder": self.folder,
             "problem": self.problem,
             "diagram_image_path": self.diagram_image_path,
+            "include_diagram": self.include_diagram,
             "code_files": [cf.to_dict() for cf in self.code_files],
             "manual_code_filename": self.manual_code_filename,
             "manual_code_content": self.manual_code_content,
@@ -79,6 +82,7 @@ class Exercise:
             folder=data.get("folder", ""),
             problem=data.get("problem", ""),
             diagram_image_path=data.get("diagram_image_path", ""),
+            include_diagram=data.get("include_diagram", True),
             code_files=code_files,
             manual_code_filename=data.get("manual_code_filename", "Program.cs"),
             manual_code_content=data.get("manual_code_content", ""),

@@ -111,7 +111,8 @@ class ReportComposerApp:
         # Project File Ops
         ttk.Button(sidebar_frame, text="📂 Mở Dự Án (.json)", style="Sidebar.TButton", command=self._open_project).pack(fill=tk.X, pady=3)
         ttk.Button(sidebar_frame, text="💾 Lưu Dự Án (.json)", style="Sidebar.TButton", command=self._save_project).pack(fill=tk.X, pady=3)
-        ttk.Button(sidebar_frame, text="⚡ Nạp 18 Bài Mẫu Tuần 2", style="Sidebar.TButton", command=self._load_sample_tuan2).pack(fill=tk.X, pady=3)
+        ttk.Button(sidebar_frame, text="⚡ Nạp 18 Bài Mẫu Tuần 2 (OOP)", style="Sidebar.TButton", command=self._load_sample_tuan2).pack(fill=tk.X, pady=3)
+        ttk.Button(sidebar_frame, text="⚡ Nạp 9 Bài Mẫu Tuần 3 (LINQ)", style="Sidebar.TButton", command=self._load_sample_tuan3).pack(fill=tk.X, pady=3)
 
         ttk.Separator(sidebar_frame, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=8)
 
@@ -235,6 +236,19 @@ class ReportComposerApp:
         diag_box = ttk.LabelFrame(f, text="2. Sơ Đồ Lớp (Class Diagram - Tùy Chọn)", padding=8)
         diag_box.pack(fill=tk.X, pady=6)
 
+        # Checkbox: Có sơ đồ lớp hay không
+        self.var_include_diagram = tk.BooleanVar(value=True)
+        tk.Checkbutton(
+            diag_box,
+            text="✅ Có mục Sơ Đồ Lớp trong DOCX (bỏ chọn = bỏ hẳn mục này và đánh số lại)",
+            variable=self.var_include_diagram,
+            font=("Segoe UI", 10, "bold"),
+            bg="#F3F4F6",
+            fg="#1B365D",
+            activebackground="#F3F4F6",
+            command=self._on_include_diagram_changed
+        ).pack(anchor=tk.W, pady=(0, 6))
+
         diag_row = ttk.Frame(diag_box)
         diag_row.pack(fill=tk.X, pady=2)
 
@@ -356,6 +370,7 @@ class ReportComposerApp:
             ex.title = self.entry_ex_title.get().strip()
             ex.folder = self.entry_ex_folder.get().strip()
             ex.problem = self.text_problem.get("1.0", tk.END).strip()
+            ex.include_diagram = self.var_include_diagram.get()
             ex.output = self.text_output.get("1.0", tk.END).strip()
             ex.idea = self.text_idea.get("1.0", tk.END).strip()
 
@@ -384,6 +399,7 @@ class ReportComposerApp:
         self.text_problem.insert("1.0", ex.problem)
 
         # Diagram image
+        self.var_include_diagram.set(ex.include_diagram)
         if ex.diagram_image_path and os.path.exists(ex.diagram_image_path):
             self.lbl_diagram_path.config(text=f"Đã chọn: {os.path.basename(ex.diagram_image_path)} ({ex.diagram_image_path})", fg="#008800")
         else:
@@ -561,6 +577,15 @@ class ReportComposerApp:
         self.lbl_diagram_path.config(text="[Chưa chọn ảnh - File DOCX sẽ tạo khung nét đứt để dán ảnh sau]", fg="#666666")
         self.status_var.set("Đã xóa ảnh sơ đồ lớp.")
 
+    def _on_include_diagram_changed(self):
+        """Callback khi người dùng tick/bỏ tick checkbox sơ đồ lớp — lưu ngay vào model."""
+        if self.current_exercise_idx is not None and 0 <= self.current_exercise_idx < len(self.project.exercises):
+            ex = self.project.exercises[self.current_exercise_idx]
+            ex.include_diagram = self.var_include_diagram.get()
+            state = "có" if ex.include_diagram else "không có"
+            self.status_var.set(f"Bài '{ex.title}': mục sơ đồ lớp = {state}.")
+
+
     # ----------------- CODE FILES -----------------
     def _add_cs_file(self):
         if self.current_exercise_idx is None:
@@ -648,6 +673,21 @@ class ReportComposerApp:
                     messagebox.showwarning("Thông báo", "Không tìm thấy thư mục Tuan2 để nạp mẫu.")
             except Exception as e:
                 messagebox.showerror("Lỗi", f"Không thể nạp mẫu Tuần 2: {e}")
+
+    # ----------------- LOAD SAMPLE TUAN 3 -----------------
+    def _load_sample_tuan3(self):
+        if messagebox.askyesno("Nạp Dữ Liệu Mẫu", "Bạn có muốn nạp toàn bộ 9 bài tập thực hành Tuần 3 (LINQ Căn bản) vào trình soạn thảo?"):
+            try:
+                sample_json = r"c:\Users\nguye\Desktop\CSharp\Tuan3\BaoCao_ThucHanh03_LINQ_Project.json"
+                if os.path.exists(sample_json):
+                    self.project = ReportProject.load_json(sample_json)
+                    self.current_exercise_idx = 0
+                    self._refresh_all_ui()
+                    messagebox.showinfo("Thành công", f"Đã nạp thành công {len(self.project.exercises)} bài tập từ Tuần 3 (LINQ)!")
+                else:
+                    messagebox.showwarning("Thông báo", "Không tìm thấy file dự án Tuần 3.")
+            except Exception as e:
+                messagebox.showerror("Lỗi", f"Không thể nạp mẫu Tuần 3: {e}")
 
     # ----------------- SAVE / OPEN PROJECT -----------------
     def _save_project(self):

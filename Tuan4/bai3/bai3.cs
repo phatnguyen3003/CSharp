@@ -1,5 +1,5 @@
 ﻿using Bai1; // dùng lại hàm textchanged của bài 1
-namespace bai3;
+namespace bai3; 
 
 public partial class bai3 : Form
 {

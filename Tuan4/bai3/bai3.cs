@@ -3,14 +3,14 @@ namespace bai3;
 
 public partial class bai3 : Form
 {
-    private Bai1.Form1 form1 = new Bai1.Form1();
+    private Bai1.bai1 form1 = new Bai1.bai1();
     public bai3()
     {
         InitializeComponent();
         textbox_a.TextChanged += form1.txt_TextChanged;//tái sử dụng
         textbox_b.TextChanged += form1.txt_TextChanged;
-        textbox_a.KeyPress += form1.txt_KeyPress;
-        textbox_b.KeyPress += form1.txt_KeyPress;
+        textbox_a.KeyPress += (sender, e) => form1.txt_KeyPress(sender, e, intnumber: true, lineofnum: false);
+        textbox_b.KeyPress += (sender, e) => form1.txt_KeyPress(sender, e, intnumber: true, lineofnum: false);
 
         //add form closing event
         this.FormClosing += form1.Form1_FormClosing;

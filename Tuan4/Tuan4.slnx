@@ -3,4 +3,5 @@
   <Project Path="bai2/bai2.csproj" />
   <Project Path="bai3/bai3.csproj" />
   <Project Path="Bai4/Bai4.csproj" />
+  <Project Path="Bai5/Bai5.csproj" />
 </Solution>

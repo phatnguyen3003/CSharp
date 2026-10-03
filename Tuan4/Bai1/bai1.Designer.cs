@@ -1,6 +1,6 @@
 ﻿namespace Bai1;
 
-partial class Form1
+partial class bai1
 {
     /// <summary>
     ///  Required designer variable.
@@ -61,7 +61,6 @@ partial class Form1
         textBox1.Size = new Size(78, 27);
         textBox1.TabIndex = 1;
         textBox1.TextChanged += txt_TextChanged;
-        textBox1.KeyPress += txt_KeyPress;
         // 
         // textBox2
         // 
@@ -70,7 +69,6 @@ partial class Form1
         textBox2.Size = new Size(78, 27);
         textBox2.TabIndex = 3;
         textBox2.TextChanged += txt_TextChanged;
-        textBox2.KeyPress += txt_KeyPress;
         // 
         // label2
         // 
@@ -142,7 +140,7 @@ partial class Form1
         // 
         errorProvider1.ContainerControl = this;
         // 
-        // Form1
+        // bai1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
@@ -157,7 +155,7 @@ partial class Form1
         Controls.Add(label2);
         Controls.Add(textBox1);
         Controls.Add(label1);
-        Name = "Form1";
+        Name = "bai1";
         Text = "cộng trừ nhân chia";
         FormClosing += Form1_FormClosing;
         ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

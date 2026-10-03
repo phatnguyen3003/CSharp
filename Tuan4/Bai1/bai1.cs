@@ -3,12 +3,14 @@ using System.Windows.Forms;
 
 namespace Bai1;
 
-public partial class Form1 : Form
+public partial class bai1 : Form
 {
-    public Form1()
+    public bai1()
     {
         InitializeComponent();
 
+        this.textBox1.KeyPress += (sender, e) => txt_KeyPress(sender, e, intnumber: true, lineofnum: false);
+        this.textBox2.KeyPress += (sender, e) => txt_KeyPress(sender, e, intnumber: true, lineofnum: false);
     }
 
     // 1. Dùng chung 1 hàm TextChanged
@@ -32,16 +34,29 @@ public partial class Form1 : Form
         }
     }
 
+
+
+
     // 2. Chặn phím ngay lúc gõ
-    public void txt_KeyPress(object sender, KeyPressEventArgs e)
+    public void txt_KeyPress(object sender, KeyPressEventArgs e,bool intnumber = false,bool lineofnum = false)
     {
         TextBox txt = (TextBox)sender;
 
-        // Cho phép phím điều khiển (Backspace...) và chữ số
-        if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar))
+        if(lineofnum == false)
         {
-            return;
+            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
         }
+        else
+        {
+            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar) || e.KeyChar == ' ')
+            {
+                return;
+            }
+        }
+
 
         // Cho phép 1 dấu '-' ở đầu chuỗi (số âm)
         if (e.KeyChar == '-' && txt.SelectionStart == 0 && !txt.Text.Contains("-"))
@@ -49,15 +64,20 @@ public partial class Form1 : Form
             return;
         }
 
-        // Cho phép 1 dấu phân cách thập phân (dấu '.' hoặc ',')
-        if ((e.KeyChar == '.' || e.KeyChar == ',') && !txt.Text.Contains(".") && !txt.Text.Contains(","))
+        if (intnumber == false)
         {
-            return;
+            // Cho phép 1 dấu phân cách thập phân (dấu '.' hoặc ',')
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && !txt.Text.Contains(".") && !txt.Text.Contains(","))
+            {
+                return;
+            }
         }
 
         // Chặn tất cả các ký tự khác
         e.Handled = true;
     }
+
+
 
     // 3. Xử lý tính toán khi nhấn nút
     private void btn_PhepTinh_Click(object sender, EventArgs e)

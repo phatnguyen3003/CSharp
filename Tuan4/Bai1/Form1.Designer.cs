@@ -60,7 +60,7 @@ partial class Form1
         textBox1.RightToLeft = RightToLeft.No;
         textBox1.Size = new Size(78, 27);
         textBox1.TabIndex = 1;
-        textBox1.TextChanged += textBox1_TextChanged;
+        textBox1.TextChanged += txt_TextChanged;
         textBox1.KeyPress += txt_KeyPress;
         // 
         // textBox2
@@ -69,7 +69,7 @@ partial class Form1
         textBox2.Name = "textBox2";
         textBox2.Size = new Size(78, 27);
         textBox2.TabIndex = 3;
-        textBox2.TextChanged += textBox2_TextChanged;
+        textBox2.TextChanged += txt_TextChanged;
         textBox2.KeyPress += txt_KeyPress;
         // 
         // label2

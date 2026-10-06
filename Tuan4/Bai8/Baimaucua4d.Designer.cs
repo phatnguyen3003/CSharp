@@ -1,6 +1,6 @@
 ﻿namespace Bai8
 {
-    partial class bai8
+    partial class Baimaucua4d
     {
         /// <summary>
         ///  Required designer variable.

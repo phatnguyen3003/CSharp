@@ -1,10 +1,10 @@
 ﻿using Bai1; // su dung lai bai1
 namespace Bai8
 {
-    public partial class bai8 : Form
+    public partial class Baimaucua4d : Form
     {
         Bai1.bai1 bai1Form = new Bai1.bai1();
-        public bai8()
+        public Baimaucua4d()
         {
             InitializeComponent();
         }

@@ -5,4 +5,5 @@
   <Project Path="Bai4/Bai4.csproj" />
   <Project Path="Bai5/Bai5.csproj" />
   <Project Path="Bai6/Bai6.csproj" Id="cbf05936-787e-4d7d-82a5-3db2cad8cc8f" />
+  <Project Path="Bai7/Bai7.csproj" Id="7a98659e-8318-443a-bb7d-0600d6be76cd" />
 </Solution>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Bai1/Bai1.csproj" />
+  <Project Path="Bai2/Bai2.csproj" Id="94e78f8d-bc39-415c-a77d-f68e60b31c70" />
+  <Project Path="ClassLibrary/ClassLibrary.csproj" Id="ce18c306-e05e-4897-b929-8421f1c60e57" />
+</Solution>

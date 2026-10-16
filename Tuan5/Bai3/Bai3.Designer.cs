@@ -56,6 +56,7 @@
             listbox.Name = "listbox";
             listbox.Size = new Size(230, 324);
             listbox.TabIndex = 1;
+            listbox.MouseDoubleClick += listbox_MouseDoubleClick;
             // 
             // btn_delete_current_selected
             // 

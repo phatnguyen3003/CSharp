@@ -190,5 +190,82 @@ namespace Bai3
             name_list.Clear();
             listbox.Items.Clear();
         }
+
+        private void listbox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = listbox.SelectedIndex;
+
+            if (index != -1)
+            {
+                string currentText = listbox.Items[index].ToString();
+
+                using (FormDetail frm = new FormDetail(currentText))
+                {
+                    if (frm.ShowDialog(this) == DialogResult.OK)
+                    {
+                        string newText = frm.UpdatedText;
+
+                        // cap nhat danh sach goc
+                        name_list[index] = newText;
+
+                        // cap nhat listbox
+                        listbox.Items.RemoveAt(index);
+                        listbox.Items.Insert(index, newText);
+
+                        // giu lai selection tai vi tri vua sua
+                        listbox.SelectedIndex = index;
+                    }
+                }
+            }
+        }
+
+    }
+
+    public class FormDetail : Form
+    {
+        public string UpdatedText { get; private set; } = string.Empty;
+
+        private TextBox textbox_detail;
+        private Button btn_Save;
+
+        public FormDetail(string currentText)
+        {
+            // Thiet lap thuoc tinh cho Form
+            this.Text = "Chỉnh sửa tên";
+            this.Width = 350;
+            this.Height = 180;
+            this.StartPosition = FormStartPosition.CenterParent;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
+            // Khoi tao TextBox nhap lieu
+            textbox_detail = new TextBox();
+            textbox_detail.Location = new System.Drawing.Point(20, 25);
+            textbox_detail.Width = 290;
+            textbox_detail.Text = currentText;
+
+            // Khoi tao Button Luu
+            btn_Save = new Button();
+            btn_Save.Text = "Lưu";
+            btn_Save.Location = new System.Drawing.Point(135, 75);
+            btn_Save.Width = 80;
+            btn_Save.Height = 30;
+            btn_Save.Click += btn_Save_Click;
+
+            // Them cac control vao Form
+            this.Controls.Add(textbox_detail);
+            this.Controls.Add(btn_Save);
+            this.AcceptButton = btn_Save; // Cho phep an Enter de luu nhanh
+        }
+
+        private void btn_Save_Click(object? sender, EventArgs e)
+        {
+            UpdatedText = textbox_detail.Text.Trim();
+
+            // Dong form va tra ve ket qua thanh cong
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

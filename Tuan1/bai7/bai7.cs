@@ -1,5 +1,5 @@
 using System.IO;
-using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan1
 {
@@ -27,7 +27,7 @@ namespace Tuan1
 
         public static void Run()
         {
-            int n = SharedLibs.InputHelper.InputNatural("n");
+            int n = Classlibrary_for_console.InputHelper.InputNatural("n");
             try
             {
                 if (Bai7_Prime_checking(n))

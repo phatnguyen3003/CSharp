@@ -10,5 +10,5 @@
   <Project Path="Bai7/Bai7.csproj" Id="89c1ca83-2675-48da-b78a-0898c205927b" />
   <Project Path="Bai8/Bai8.csproj" Id="c3434d14-147e-4d66-893f-0af2445deb9c" />
   <Project Path="Bai9/Bai9.csproj" Id="f1aeec96-d73a-4a95-96c9-339d15479150" />
-  <Project Path="ClassLibrary/ClassLibrary.csproj" Id="ce18c306-e05e-4897-b929-8421f1c60e57" />
+  <Project Path="../Classlibrary_for_winform/Classlibrary_for_winform.csproj" Id="ce18c306-e05e-4897-b929-8421f1c60e57" />
 </Solution>

@@ -21,7 +21,7 @@ namespace Tuan2
             }
 
             // tinh da thuc khi biet x
-            double x = SharedLibs.InputHelper.InputDouble("x");
+            double x = Classlibrary_for_console.InputHelper.InputDouble("x");
             double result = p.Calculate(x);
             Console.WriteLine($"Gia tri P({x}) = {result}");
         }

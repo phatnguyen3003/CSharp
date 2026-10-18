@@ -1,5 +1,5 @@
-﻿using System;
-using SharedLibs;
+using System;
+using Classlibrary_for_console;
 
 using System.Collections.Generic;
 
@@ -110,13 +110,13 @@ namespace Tuan2
 
         public void Input()
         {
-            bac = SharedLibs.InputHelper.InputNatural("bac cua da thuc n");
+            bac = Classlibrary_for_console.InputHelper.InputNatural("bac cua da thuc n");
             DsDonThuc = new DonThuc[bac + 1];
 
             Console.WriteLine($"--- Nhap he so cho da thuc bac {bac} ---");
             for (int i = 0; i <= bac; i++)
             {
-                double heSo = SharedLibs.InputHelper.InputDouble($"he so thu {i + 1} (cho x^{i})");
+                double heSo = Classlibrary_for_console.InputHelper.InputDouble($"he so thu {i + 1} (cho x^{i})");
                 DsDonThuc[i] = new DonThuc(heSo, i);
             }
         }

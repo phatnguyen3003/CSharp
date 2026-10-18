@@ -1,5 +1,5 @@
-﻿using System;
-using SharedLibs;
+using System;
+using Classlibrary_for_console;
 using System.Collections.Generic;
 
 namespace Tuan2
@@ -79,12 +79,12 @@ namespace Tuan2
 
         public void Input()
         {
-            int n = SharedLibs.InputHelper.InputNatural("So luong phan tu n");
+            int n = Classlibrary_for_console.InputHelper.InputNatural("So luong phan tu n");
             a = new int[n];
 
             for (int i = 0; i < n; i++)
             {
-                a[i] = SharedLibs.InputHelper.InputInt($"Phan tu a[{i}]");
+                a[i] = Classlibrary_for_console.InputHelper.InputInt($"Phan tu a[{i}]");
             }
         }
 

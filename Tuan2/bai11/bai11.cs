@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using SharedLibs;
+using Classlibrary_for_console;
 
 
 namespace Tuan2
@@ -30,8 +30,8 @@ namespace Tuan2
             for (int i = 0; i < n; i++)
             {
                 PhanSo temp = new PhanSo();
-                temp.Tuso = SharedLibs.InputHelper.InputInt($"tu so cua phan so thu {i + 1}");
-                temp.Mauso = SharedLibs.InputHelper.InputNatural($"mau so cua phan so thu {i + 1}", largerthan0: true);
+                temp.Tuso = Classlibrary_for_console.InputHelper.InputInt($"tu so cua phan so thu {i + 1}");
+                temp.Mauso = Classlibrary_for_console.InputHelper.InputNatural($"mau so cua phan so thu {i + 1}", largerthan0: true);
                 dayphanso[i] = temp;
             }
         }
@@ -55,15 +55,15 @@ namespace Tuan2
 
         public void Input()
         {
-            int n = SharedLibs.InputHelper.InputNatural("so luong phan so n");
+            int n = Classlibrary_for_console.InputHelper.InputNatural("so luong phan so n");
             dayphanso = new PhanSo[n];
 
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine($"\n--- Nhap phan so thu {i + 1} ---");
                 PhanSo ps = new PhanSo();
-                ps.Tuso = SharedLibs.InputHelper.InputInt("tu so");
-                ps.Mauso = SharedLibs.InputHelper.InputNatural("mau so", true);
+                ps.Tuso = Classlibrary_for_console.InputHelper.InputInt("tu so");
+                ps.Mauso = Classlibrary_for_console.InputHelper.InputNatural("mau so", true);
 
                 dayphanso[i] = ps;
             }

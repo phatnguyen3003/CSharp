@@ -1,5 +1,5 @@
 using System;
-using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -45,9 +45,9 @@ namespace Tuan2
         // nhap/xuat
         public void Input()
         {
-            HoTen = SharedLibs.InputHelper.InputString("ho ten nhan vien");
-            MucLuong = SharedLibs.InputHelper.InputDouble("muc luong co ban");
-            SoNgayVang = SharedLibs.InputHelper.InputNatural("so ngay vang");
+            HoTen = Classlibrary_for_console.InputHelper.InputString("ho ten nhan vien");
+            MucLuong = Classlibrary_for_console.InputHelper.InputDouble("muc luong co ban");
+            SoNgayVang = Classlibrary_for_console.InputHelper.InputNatural("so ngay vang");
         }
 
         public override string ToString()
@@ -102,7 +102,7 @@ namespace Tuan2
         // nhap thong tin danh sach nhan vien
         public void Input()
         {
-            int n = SharedLibs.InputHelper.InputNatural("so luong nhan vien n", largerthan0: true);
+            int n = Classlibrary_for_console.InputHelper.InputNatural("so luong nhan vien n", largerthan0: true);
             dsNhanVien = new NhanVien[n];
 
             for (int i = 0; i < n; i++)

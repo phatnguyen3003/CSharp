@@ -1,11 +1,11 @@
-﻿namespace Bai1;
-using ClassLibrary;
-using SharedLibs;
+namespace Bai1;
+using Classlibrary_for_winform;
+using Classlibrary_for_console;
 
 public partial class Bai1 : Form
 {
     // khoi tao doi tuong ho tro winforms
-    ClassLibrary.winforms_helper helper = new ClassLibrary.winforms_helper();
+    Classlibrary_for_winform.winforms_helper helper = new Classlibrary_for_winform.winforms_helper();
 
     // danh sach luu uoc so
     List<int> DsUocSo = new List<int>();
@@ -52,7 +52,7 @@ public partial class Bai1 : Form
         int sum = 0;
         for (int i = 0; i < Ds_so.Count; i++)
         {
-            if (SharedLibs.calculating_helper.IsPrime(Ds_so[i]))
+            if (Classlibrary_for_console.calculating_helper.IsPrime(Ds_so[i]))
             {
                 sum += Ds_so[i];
             }

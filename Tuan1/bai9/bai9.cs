@@ -1,4 +1,4 @@
-using SharedLibs;
+using Classlibrary_for_console;
 
 
 namespace Tuan1
@@ -13,9 +13,9 @@ namespace Tuan1
 
         public static void Run()
         {
-            double a = SharedLibs.InputHelper.InputDouble("a");
-            double b = SharedLibs.InputHelper.InputDouble("b");
-            double c = SharedLibs.InputHelper.InputDouble("c");
+            double a = Classlibrary_for_console.InputHelper.InputDouble("a");
+            double b = Classlibrary_for_console.InputHelper.InputDouble("b");
+            double c = Classlibrary_for_console.InputHelper.InputDouble("c");
 
             double MaxVal, MinVal;
 

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ClassLibrary
+namespace Classlibrary_for_winform
 {
     public class winforms_helper
     {

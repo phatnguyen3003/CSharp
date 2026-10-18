@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -67,8 +67,8 @@ namespace Tuan2
 
         public void Input()
         {
-            this.heso = SharedLibs.InputHelper.InputDouble("he so");
-            this.Somu = SharedLibs.InputHelper.InputNatural("so mu");
+            this.heso = Classlibrary_for_console.InputHelper.InputDouble("he so");
+            this.Somu = Classlibrary_for_console.InputHelper.InputNatural("so mu");
         }
 
         public void Output()
@@ -119,7 +119,7 @@ namespace Tuan2
             DonThuc p = new DonThuc();
             p.Input();
 
-            double x = SharedLibs.InputHelper.InputDouble("x");
+            double x = Classlibrary_for_console.InputHelper.InputDouble("x");
             DonThuc daoHam = p.derivative();
 
             Console.WriteLine("===================================");

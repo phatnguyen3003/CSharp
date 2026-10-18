@@ -1,5 +1,5 @@
 using System;
-using SharedLibs;
+using Classlibrary_for_console;
 
 
 namespace Tuan2
@@ -42,8 +42,8 @@ namespace Tuan2
 
         public virtual void ThemNV()
         {
-            maNV = SharedLibs.InputHelper.InputString("ma nhan vien");
-            tenNV = SharedLibs.InputHelper.InputString("ten nhan vien");
+            maNV = Classlibrary_for_console.InputHelper.InputString("ma nhan vien");
+            tenNV = Classlibrary_for_console.InputHelper.InputString("ten nhan vien");
         }
     }
 
@@ -75,8 +75,8 @@ namespace Tuan2
         public override void ThemNV()
         {
             base.ThemNV();
-            LuongCoBan = SharedLibs.InputHelper.InputDouble("luong co ban");
-            SoHopDong = SharedLibs.InputHelper.InputNatural("so hop dong");
+            LuongCoBan = Classlibrary_for_console.InputHelper.InputDouble("luong co ban");
+            SoHopDong = Classlibrary_for_console.InputHelper.InputNatural("so hop dong");
         }
     }
 
@@ -110,7 +110,7 @@ namespace Tuan2
         public override void ThemNV()
         {
             base.ThemNV();
-            SoSanPham = SharedLibs.InputHelper.InputNatural("so san pham");
+            SoSanPham = Classlibrary_for_console.InputHelper.InputNatural("so san pham");
         }
     }
 }

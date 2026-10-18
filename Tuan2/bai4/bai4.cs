@@ -1,5 +1,5 @@
-﻿using System;
-using SharedLibs;
+using System;
+using Classlibrary_for_console;
 
 
 namespace Tuan2
@@ -205,10 +205,10 @@ namespace Tuan2
     {
         static void Main(string[] args)
         {
-            int x1 = SharedLibs.InputHelper.InputInt("x1");
-            int y1 = SharedLibs.InputHelper.InputInt("y1");
-            int x2 = SharedLibs.InputHelper.InputInt("x2");
-            int y2 = SharedLibs.InputHelper.InputInt("y2");
+            int x1 = Classlibrary_for_console.InputHelper.InputInt("x1");
+            int y1 = Classlibrary_for_console.InputHelper.InputInt("y1");
+            int x2 = Classlibrary_for_console.InputHelper.InputInt("x2");
+            int y2 = Classlibrary_for_console.InputHelper.InputInt("y2");
 
 
 

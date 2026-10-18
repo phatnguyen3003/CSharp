@@ -1,4 +1,4 @@
-using SharedLibs;
+using Classlibrary_for_console;
 
 
 namespace Tuan1
@@ -25,7 +25,7 @@ namespace Tuan1
 
         public static void Run()
         {
-            string s = SharedLibs.InputHelper.InputString("s");
+            string s = Classlibrary_for_console.InputHelper.InputString("s");
             if (IsSymmetrical(s))
             {
                 Console.Write($"Chuoi {s} doi xung");

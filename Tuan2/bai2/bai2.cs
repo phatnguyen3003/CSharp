@@ -1,4 +1,4 @@
-﻿using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -43,8 +43,8 @@ namespace Tuan2
 
         public void Input()
         {
-            x = SharedLibs.InputHelper.InputDouble("X");
-            y = SharedLibs.InputHelper.InputDouble("Y");
+            x = Classlibrary_for_console.InputHelper.InputDouble("X");
+            y = Classlibrary_for_console.InputHelper.InputDouble("Y");
         }
 
         public override string ToString()

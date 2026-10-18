@@ -1,4 +1,4 @@
-﻿using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -67,9 +67,9 @@ namespace Tuan2
 
         private void ChucNangGiaiPTB2()
         {
-            double a = SharedLibs.InputHelper.InputDouble("a");
-            double b = SharedLibs.InputHelper.InputDouble("b");
-            double c = SharedLibs.InputHelper.InputDouble("c");
+            double a = Classlibrary_for_console.InputHelper.InputDouble("a");
+            double b = Classlibrary_for_console.InputHelper.InputDouble("b");
+            double c = Classlibrary_for_console.InputHelper.InputDouble("c");
 
             PhuongTrinhBac2 pt = new PhuongTrinhBac2(a, b, c);
 

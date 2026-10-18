@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using SharedLibs;
+using Classlibrary_for_console;
 
 
 
@@ -40,7 +40,7 @@ namespace Tuan2
         public void Input()
         {
             int n;
-            n = SharedLibs.InputHelper.InputNatural("So luong nguoi");
+            n = Classlibrary_for_console.InputHelper.InputNatural("So luong nguoi");
 
             for (int i = 0; i < n; i++)
             {

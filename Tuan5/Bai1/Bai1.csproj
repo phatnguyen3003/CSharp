@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
-	<Compile Include="..\..\SharedLibs\calculating_helper.cs" Link="calculating_helper.cs" />
+    <ProjectReference Include="..\..\Classlibrary_for_winform\Classlibrary_for_winform.csproj" />
+	<Compile Include="..\..\Classlibrary_for_console\calculating_helper.cs" Link="calculating_helper.cs" />
   </ItemGroup>
 
 

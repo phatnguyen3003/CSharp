@@ -1,5 +1,5 @@
 using System.IO;
-using SharedLibs;
+using Classlibrary_for_console;
 namespace Tuan1
 {
     public class Bai5

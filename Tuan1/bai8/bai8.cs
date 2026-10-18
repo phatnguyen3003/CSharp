@@ -1,4 +1,4 @@
-using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan1
 {
@@ -14,8 +14,8 @@ namespace Tuan1
 
         public static void Run()
         {
-            double x = SharedLibs.InputHelper.InputDouble("x");
-            double y = SharedLibs.InputHelper.InputDouble("y");
+            double x = Classlibrary_for_console.InputHelper.InputDouble("x");
+            double y = Classlibrary_for_console.InputHelper.InputDouble("y");
 
 
             Console.WriteLine($"Truoc khi hoan vi: x= {x}, y= {y}");

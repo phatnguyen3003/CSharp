@@ -1,5 +1,5 @@
-﻿using System;
-using SharedLibs;
+using System;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -105,20 +105,20 @@ namespace Tuan2
         // 5. Method: Input
         public void Input()
         {
-            id = SharedLibs.InputHelper.InputString("ID");
+            id = Classlibrary_for_console.InputHelper.InputString("ID");
 
-            name = SharedLibs.InputHelper.InputString("Ho ten");
+            name = Classlibrary_for_console.InputHelper.InputString("Ho ten");
 
-            yob = SharedLibs.InputHelper.InputNatural("Nam Sinh");
+            yob = Classlibrary_for_console.InputHelper.InputNatural("Nam Sinh");
             while (yob > DateTime.Now.Year)
             {
-                yob = SharedLibs.InputHelper.InputNatural("lai nam Sinh");
+                yob = Classlibrary_for_console.InputHelper.InputNatural("lai nam Sinh");
             }
 
-            yod = SharedLibs.InputHelper.InputNatural("nam mat (YOD) [Nhap 0 neu con song]: ");
+            yod = Classlibrary_for_console.InputHelper.InputNatural("nam mat (YOD) [Nhap 0 neu con song]: ");
             while (yod != 0 && yod < yob)
             {
-                yod = SharedLibs.InputHelper.InputNatural("lai nam mat (YOD) [Nhap 0 neu con song]: ");
+                yod = Classlibrary_for_console.InputHelper.InputNatural("lai nam mat (YOD) [Nhap 0 neu con song]: ");
             }
         }
 

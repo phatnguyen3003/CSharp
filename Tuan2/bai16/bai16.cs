@@ -51,7 +51,7 @@ namespace Tuan2
             {
                 Console.WriteLine();
                 Display();
-                choice = SharedLibs.InputHelper.InputInt("lua chon");
+                choice = Classlibrary_for_console.InputHelper.InputInt("lua chon");
 
                 if (choice > 0 && choice <= items.Count)
                 {

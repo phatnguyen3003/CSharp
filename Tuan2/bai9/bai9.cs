@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using SharedLibs;
+using Classlibrary_for_console;
 
 using Tuan1;
 
@@ -94,8 +94,8 @@ namespace Tuan2
 
         public void Input()
         {
-            n = SharedLibs.InputHelper.InputNatural("So dong n");
-            m = SharedLibs.InputHelper.InputNatural("So cot m");
+            n = Classlibrary_for_console.InputHelper.InputNatural("So dong n");
+            m = Classlibrary_for_console.InputHelper.InputNatural("So cot m");
 
             rows = new DaySo[n];
             for (int i = 0; i < n; i++)
@@ -105,7 +105,7 @@ namespace Tuan2
                 for (int j = 0; j < m; j++)
                 {
                     // Nhap tung phan tu qua indexer
-                    this[i, j] = SharedLibs.InputHelper.InputInt($"Phan tu [{i}, {j}]");
+                    this[i, j] = Classlibrary_for_console.InputHelper.InputInt($"Phan tu [{i}, {j}]");
                 }
             }
         }

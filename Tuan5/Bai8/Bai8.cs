@@ -1,12 +1,12 @@
 using System.Globalization;
-using ClassLibrary;
+using Classlibrary_for_winform;
 
 namespace Bai8
 {
     public partial class Bai8 : Form
     {
 
-        ClassLibrary.winforms_helper helper = new ClassLibrary.winforms_helper();
+        Classlibrary_for_winform.winforms_helper helper = new Classlibrary_for_winform.winforms_helper();
 
         // Bien co trang thai kiem tra co dang o che do them moi hay khong
         private bool isAdding;

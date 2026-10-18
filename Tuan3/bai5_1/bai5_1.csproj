@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SharedLibs\SharedLibs.csproj" />
+    <ProjectReference Include="..\..\Classlibrary_for_console\Classlibrary_for_console.csproj" />
     <ProjectReference Include="..\bai4_1\bai4_1.csproj" />
   </ItemGroup>
 

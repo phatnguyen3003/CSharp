@@ -1,5 +1,5 @@
-﻿using System;
-using SharedLibs;
+using System;
+using Classlibrary_for_console;
 
 
 namespace Tuan2
@@ -43,11 +43,11 @@ namespace Tuan2
             }
             else
             {
-                string HoTen = SharedLibs.InputHelper.InputString("Ho Ten");
-                int NamSinh = SharedLibs.InputHelper.InputNatural("nam sinh");
+                string HoTen = Classlibrary_for_console.InputHelper.InputString("Ho Ten");
+                int NamSinh = Classlibrary_for_console.InputHelper.InputNatural("nam sinh");
                 while (NamSinh <= 0 || NamSinh > DateTime.Now.Year)
                 {
-                    NamSinh = SharedLibs.InputHelper.InputNatural("nam sinh");
+                    NamSinh = Classlibrary_for_console.InputHelper.InputNatural("nam sinh");
                 }
 
                 HocSinh hocsinh = new HocSinh(HoTen, NamSinh);

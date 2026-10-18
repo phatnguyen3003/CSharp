@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using SharedLibs;
+using Classlibrary_for_console;
 
 namespace Tuan2
 {
@@ -19,11 +19,11 @@ namespace Tuan2
         // Nhap thong tin dung chung cho moi thi sinh
         public virtual void Nhap()
         {
-            SBD = SharedLibs.InputHelper.InputString("SBD");
-            HoTen = SharedLibs.InputHelper.InputString("ho ten");
-            Bai1 = SharedLibs.InputHelper.InputDouble("diem bai 1");
-            Bai2 = SharedLibs.InputHelper.InputDouble("diem bai 2");
-            Bai3 = SharedLibs.InputHelper.InputDouble("diem bai 3");
+            SBD = Classlibrary_for_console.InputHelper.InputString("SBD");
+            HoTen = Classlibrary_for_console.InputHelper.InputString("ho ten");
+            Bai1 = Classlibrary_for_console.InputHelper.InputDouble("diem bai 1");
+            Bai2 = Classlibrary_for_console.InputHelper.InputDouble("diem bai 2");
+            Bai3 = Classlibrary_for_console.InputHelper.InputDouble("diem bai 3");
         }
 
         // Xuat thong tin va tong diem
@@ -41,7 +41,7 @@ namespace Tuan2
         public override void Nhap()
         {
             base.Nhap();
-            TiengAnh = SharedLibs.InputHelper.InputDouble("diem bai tieng anh");
+            TiengAnh = Classlibrary_for_console.InputHelper.InputDouble("diem bai tieng anh");
         }
 
         // Tinh tong diem thi sinh chuyen kem diem thuong tieng Anh
@@ -74,7 +74,7 @@ namespace Tuan2
         public override void Nhap()
         {
             base.Nhap();
-            CSDL = SharedLibs.InputHelper.InputDouble("diem bai CSDL");
+            CSDL = Classlibrary_for_console.InputHelper.InputDouble("diem bai CSDL");
         }
 
         // Tinh tong diem thi sinh sieu cup (cong diem 4 bai)
@@ -98,7 +98,7 @@ namespace Tuan2
         // Nhap danh sach thi sinh tu ban phim
         public void NhapDanhSach()
         {
-            int n = SharedLibs.InputHelper.InputNatural("so luong thi sinh", true);
+            int n = Classlibrary_for_console.InputHelper.InputNatural("so luong thi sinh", true);
 
             for (int i = 0; i < n; i++)
             {
@@ -106,7 +106,7 @@ namespace Tuan2
                 int loai;
                 do
                 {
-                    loai = SharedLibs.InputHelper.InputInt("loai thi sinh (1: Chuyen, 2: Sieu Cup)");
+                    loai = Classlibrary_for_console.InputHelper.InputInt("loai thi sinh (1: Chuyen, 2: Sieu Cup)");
                     if (loai != 1 && loai != 2)
                     {
                         Console.WriteLine("Khong hop le, vui long nhap lai!");

@@ -1,7 +1,7 @@
 using System.IO;
 
 
-namespace SharedLibs;
+namespace Classlibrary_for_console;
 
 public class calculating_helper
 {

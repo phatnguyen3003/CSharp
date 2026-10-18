@@ -1,0 +1,104 @@
+name: .NET CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET SDKs
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+
+      - name: Build all C# projects
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $projects = @(
+            Get-ChildItem -Path . -Recurse -Filter *.csproj -File |
+              Where-Object { $_.FullName -notmatch '[\\/](bin|obj|\.git|\.vs)[\\/]' } |
+              Sort-Object FullName
+          )
+
+          if ($projects.Count -eq 0) {
+            throw 'No C# project files (*.csproj) were found.'
+          }
+
+          $failedProjects = [System.Collections.Generic.List[string]]::new()
+          foreach ($project in $projects) {
+            Write-Host "::group::Build $($project.FullName)"
+            dotnet build $project.FullName --configuration Release --verbosity minimal
+            if ($LASTEXITCODE -ne 0) {
+              $failedProjects.Add($project.FullName)
+            }
+            Write-Host '::endgroup::'
+          }
+
+          if ($failedProjects.Count -gt 0) {
+            Write-Error "Build failed for:`n$($failedProjects -join "`n")"
+            exit 1
+          }
+
+      - name: Run available test projects
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $projects = @(
+            Get-ChildItem -Path . -Recurse -Filter *.csproj -File |
+              Where-Object { $_.FullName -notmatch '[\\/](bin|obj|\.git|\.vs)[\\/]' } |
+              Sort-Object FullName
+          )
+
+          $testProjects = @(
+            foreach ($project in $projects) {
+              [xml]$projectXml = Get-Content -LiteralPath $project.FullName -Raw
+              $isMarkedAsTest = @(
+                $projectXml.Project.PropertyGroup |
+                  Where-Object { $_.IsTestProject -eq 'true' }
+              ).Count -gt 0
+              $usesTestSdk = @(
+                $projectXml.Project.ItemGroup.PackageReference |
+                  Where-Object {
+                    $_.Include -match '^(Microsoft\.NET\.Test\.Sdk|xunit(\.v3)?|NUnit|MSTest\.TestFramework)$'
+                  }
+              ).Count -gt 0
+
+              if ($isMarkedAsTest -or $usesTestSdk -or $project.BaseName -match '(?i)test') {
+                $project
+              }
+            }
+          )
+
+          if ($testProjects.Count -eq 0) {
+            Write-Host '::notice::No test projects found; build validation completed.'
+            exit 0
+          }
+
+          $failedProjects = [System.Collections.Generic.List[string]]::new()
+          foreach ($project in $testProjects) {
+            Write-Host "::group::Test $($project.FullName)"
+            dotnet test $project.FullName --configuration Release --no-build --no-restore --verbosity minimal
+            if ($LASTEXITCODE -ne 0) {
+              $failedProjects.Add($project.FullName)
+            }
+            Write-Host '::endgroup::'
+          }
+
+          if ($failedProjects.Count -gt 0) {
+            Write-Error "Tests failed for:`n$($failedProjects -join "`n")"
+            exit 1
+          }

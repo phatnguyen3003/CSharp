@@ -21,12 +21,12 @@ namespace Tuan2
             InDanhSach(dsNhanVien);
 
             // goi ham sap xep theo ten da khai bao o bai13.cs
-            ArraySortTinh_Bai13.SapXepTheoTen(dsNhanVien);
+            ArraySort_Bai13.SapXepTheoTen(dsNhanVien);
             Console.WriteLine("\n==== sap xep theo ten (A -> Z) ====");
             InDanhSach(dsNhanVien);
 
             // 3. Gọi hàm SapXepTheoLuongGiamDan từ class ArraySortTinh_Bai13
-            ArraySortTinh_Bai13.SapXepTheoLuongGiamDan(dsNhanVien);
+            ArraySort_Bai13.SapXepTheoLuongGiamDan(dsNhanVien);
             Console.WriteLine("\n==== sap xep theo luong( giam dan) ====");
             InDanhSach(dsNhanVien);
         }

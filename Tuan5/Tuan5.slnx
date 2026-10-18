@@ -6,5 +6,6 @@
   <Project Path="Bai5/Bai5.csproj" Id="3a6306d9-a53d-4b8b-a1ca-c7f788afcc98" />
   <Project Path="Bai6/Bai6.csproj" Id="4c41c80b-18dd-4fff-ae69-e21a6c81cf2a" />
   <Project Path="Bai7/Bai7.csproj" Id="89c1ca83-2675-48da-b78a-0898c205927b" />
+  <Project Path="Bai8/Bai8.csproj" Id="c3434d14-147e-4d66-893f-0af2445deb9c" />
   <Project Path="ClassLibrary/ClassLibrary.csproj" Id="ce18c306-e05e-4897-b929-8421f1c60e57" />
 </Solution>

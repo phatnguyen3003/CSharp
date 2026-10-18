@@ -34,13 +34,13 @@
             label2 = new Label();
             label3 = new Label();
             panel1 = new Panel();
-            Radio_Nam = new RadioButton();
             Radio_nu = new RadioButton();
+            Radio_Nam = new RadioButton();
             panel2 = new Panel();
-            label4 = new Label();
-            CheckBox_anh = new CheckBox();
-            CheckBox_phap = new CheckBox();
             CheckBox_hoa = new CheckBox();
+            CheckBox_phap = new CheckBox();
+            CheckBox_anh = new CheckBox();
+            label4 = new Label();
             label5 = new Label();
             Combo_dantoc = new ComboBox();
             dataGridView1 = new DataGridView();
@@ -108,17 +108,6 @@
             panel1.Size = new Size(286, 42);
             panel1.TabIndex = 5;
             // 
-            // Radio_Nam
-            // 
-            Radio_Nam.AutoSize = true;
-            Radio_Nam.Location = new Point(108, 9);
-            Radio_Nam.Name = "Radio_Nam";
-            Radio_Nam.Size = new Size(62, 24);
-            Radio_Nam.TabIndex = 5;
-            Radio_Nam.TabStop = true;
-            Radio_Nam.Text = "Nam";
-            Radio_Nam.UseVisualStyleBackColor = true;
-            // 
             // Radio_nu
             // 
             Radio_nu.AutoSize = true;
@@ -126,9 +115,20 @@
             Radio_nu.Name = "Radio_nu";
             Radio_nu.Size = new Size(50, 24);
             Radio_nu.TabIndex = 6;
-            Radio_nu.TabStop = true;
             Radio_nu.Text = "Nữ";
             Radio_nu.UseVisualStyleBackColor = true;
+            // 
+            // Radio_Nam
+            // 
+            Radio_Nam.AutoSize = true;
+            Radio_Nam.Checked = true;
+            Radio_Nam.Location = new Point(108, 9);
+            Radio_Nam.Name = "Radio_Nam";
+            Radio_Nam.Size = new Size(62, 24);
+            Radio_Nam.TabIndex = 5;
+            Radio_Nam.TabStop = true;
+            Radio_Nam.Text = "Nam";
+            Radio_Nam.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -141,24 +141,15 @@
             panel2.Size = new Size(286, 40);
             panel2.TabIndex = 6;
             // 
-            // label4
+            // CheckBox_hoa
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(0, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 20);
-            label4.TabIndex = 0;
-            label4.Text = "Ngoại ngữ";
-            // 
-            // CheckBox_anh
-            // 
-            CheckBox_anh.AutoSize = true;
-            CheckBox_anh.Location = new Point(91, 10);
-            CheckBox_anh.Name = "CheckBox_anh";
-            CheckBox_anh.Size = new Size(57, 24);
-            CheckBox_anh.TabIndex = 1;
-            CheckBox_anh.Text = "Anh";
-            CheckBox_anh.UseVisualStyleBackColor = true;
+            CheckBox_hoa.AutoSize = true;
+            CheckBox_hoa.Location = new Point(224, 10);
+            CheckBox_hoa.Name = "CheckBox_hoa";
+            CheckBox_hoa.Size = new Size(59, 24);
+            CheckBox_hoa.TabIndex = 3;
+            CheckBox_hoa.Text = "Hoa";
+            CheckBox_hoa.UseVisualStyleBackColor = true;
             // 
             // CheckBox_phap
             // 
@@ -170,15 +161,24 @@
             CheckBox_phap.Text = "Pháp";
             CheckBox_phap.UseVisualStyleBackColor = true;
             // 
-            // CheckBox_hoa
+            // CheckBox_anh
             // 
-            CheckBox_hoa.AutoSize = true;
-            CheckBox_hoa.Location = new Point(224, 10);
-            CheckBox_hoa.Name = "CheckBox_hoa";
-            CheckBox_hoa.Size = new Size(59, 24);
-            CheckBox_hoa.TabIndex = 3;
-            CheckBox_hoa.Text = "Hoa";
-            CheckBox_hoa.UseVisualStyleBackColor = true;
+            CheckBox_anh.AutoSize = true;
+            CheckBox_anh.Location = new Point(91, 10);
+            CheckBox_anh.Name = "CheckBox_anh";
+            CheckBox_anh.Size = new Size(57, 24);
+            CheckBox_anh.TabIndex = 1;
+            CheckBox_anh.Text = "Anh";
+            CheckBox_anh.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(0, 10);
+            label4.Name = "label4";
+            label4.Size = new Size(80, 20);
+            label4.TabIndex = 0;
+            label4.Text = "Ngoại ngữ";
             // 
             // label5
             // 

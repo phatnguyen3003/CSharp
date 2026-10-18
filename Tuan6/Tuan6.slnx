@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Bai1/Bai1.csproj" Id="f2ccedb9-e7bf-46a1-b151-cacdc9681a8c" />
+  <Project Path="../Classlibrary_for_database/Classlibrary_for_database.csproj" />
+  <Project Path="Bai1/Bai1.csproj" />
+  <Project Path="CreateDatabase/CreateDatabase.csproj" Id="2efb64ab-4bc9-4d84-8db6-8355104b2331" />
 </Solution>

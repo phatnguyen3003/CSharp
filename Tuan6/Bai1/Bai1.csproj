@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Classlibrary_for_database\Classlibrary_for_database.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -7,9 +11,5 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
-  </ItemGroup>
 
 </Project>

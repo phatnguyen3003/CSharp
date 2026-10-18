@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Bai1/Bai1.csproj" />
+  <Project Path="Bai10/Bai10.csproj" Id="d25d33c1-ce08-43fe-b60a-83b6a3f4b46b" />
   <Project Path="Bai2/Bai2.csproj" Id="94e78f8d-bc39-415c-a77d-f68e60b31c70" />
   <Project Path="Bai3/Bai3.csproj" Id="2baca0d9-06bb-424e-802b-9c54b92988ff" />
   <Project Path="Bai4/Bai4.csproj" Id="5656626c-d952-4e70-95a2-940ea5bb1258" />

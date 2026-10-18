@@ -81,7 +81,7 @@ public partial class Form1 : Form
             textbox_MaMH.Focus();
             return;
         }
-
+         
         try
         {
             // Thuc thi cau lenh DELETE bat dong bo, nhan ve so luong dong du lieu bi anh huong (soDong)

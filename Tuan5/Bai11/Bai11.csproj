@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bai1\Bai1.csproj" />
+    <ProjectReference Include="..\Bai2\Bai2.csproj" />
+    <ProjectReference Include="..\Bai3\Bai3.csproj" />
+    <ProjectReference Include="..\Bai4\Bai4.csproj" />
+    <ProjectReference Include="..\Bai5\Bai5.csproj" />
+    <ProjectReference Include="..\Bai6\Bai6.csproj" />
+    <ProjectReference Include="..\Bai7\Bai7.csproj" />
+    <ProjectReference Include="..\Bai8\Bai8.csproj" />
+    <ProjectReference Include="..\Bai9\Bai9.csproj" />
+    <ProjectReference Include="..\Bai10\Bai10.csproj" />
+  </ItemGroup>
+
+</Project>

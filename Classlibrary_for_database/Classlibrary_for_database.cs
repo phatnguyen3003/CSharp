@@ -16,9 +16,9 @@ public sealed class DatabaseHelper
         ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
 
         var builder = new SqlConnectionStringBuilder(connectionString);
-        builder.ConnectTimeout = 5; // them time out 5 giay
+        builder.ConnectTimeout = 2;
 
-        _connectionString = connectionString;
+        _connectionString = builder.ConnectionString;
     }
 
     // Tao va tra ve mot doi tuong SqlConnection moi dua tren chuoi ket noi da cau hinh

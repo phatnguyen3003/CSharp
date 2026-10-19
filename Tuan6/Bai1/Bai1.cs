@@ -1,4 +1,5 @@
 namespace Bai1;
+
 using Classlibrary_for_database;
 
 // Khai bao lop Form1 quan ly giao dien va thao tac du lieu bang MonHoc
@@ -12,24 +13,42 @@ public partial class Form1 : Form
     private static readonly string TrustServer = "True";
 
     // Ghep cac thong so thanh chuoi ket noi hoan chinh
-    string connectionString = $"Server={Server};Database={Database};User Id={User_ID};Password={Password};TrustServerCertificate={TrustServer};";
-
     // Khai bao bien doi tuong DatabaseHelper dung chung cho toan bo form
-    private DatabaseHelper helper = null!;
+    private readonly DatabaseHelper helper;
+
+    string connectionString = $"Server={Server};Database={Database};User Id={User_ID};Password={Password};TrustServerCertificate={TrustServer};";
 
     // Phuong thuc khoi tao Form, thiet lap giao dien va dang ky su kien cho cac nut bam
     public Form1()
     {
+        helper = new DatabaseHelper(connectionString);
         InitializeComponent();
 
-        // Khoi tao doi tuong DatabaseHelper tu Class Library voi chuoi ket noi da tao
-        helper = new DatabaseHelper(connectionString);
+        Load += Form1_Load;
 
         // Dang ky su kien Click cho cac nut Them, Xoa, Sua
         btn_them.Click += btnThem_Click;
         btn_xoa.Click += btnXoa_Click;
         btn_sua.Click += btnSua_Click;
     }
+
+    private async void Form1_Load(object? sender, EventArgs e)
+    {
+        bool isConnected = await helper.TestConnectionAsync();
+
+        if (!isConnected)
+        {
+            MessageBox.Show(
+                "Không thể kết nối đến cơ sở dữ liệu.",
+                "Lỗi kết nối",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            Close();
+            return;
+        }
+
+    }
+
 
     // Xu ly su kien khi nhan nut Them mon hoc moi vao co so du lieu
     private async void btnThem_Click(object? sender, EventArgs e)
@@ -81,7 +100,7 @@ public partial class Form1 : Form
             textbox_MaMH.Focus();
             return;
         }
-         
+
         try
         {
             // Thuc thi cau lenh DELETE bat dong bo, nhan ve so luong dong du lieu bi anh huong (soDong)

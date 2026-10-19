@@ -14,6 +14,10 @@ public sealed class DatabaseHelper
     public DatabaseHelper(string connectionString)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+
+        var builder = new SqlConnectionStringBuilder(connectionString);
+        builder.ConnectTimeout = 5; // them time out 5 giay
+
         _connectionString = connectionString;
     }
 

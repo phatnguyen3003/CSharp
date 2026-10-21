@@ -1,5 +1,9 @@
 <Solution>
   <Project Path="../Classlibrary_for_database/Classlibrary_for_database.csproj" />
+  <Project Path="../Classlibrary_for_winform/Classlibrary_for_winform.csproj" />
   <Project Path="Bai1/Bai1.csproj" />
+  <Project Path="Bai2/Bai2.csproj" Id="d759275e-b50e-467e-9d27-4dfaca8132fc" />
+  <Project Path="Bai3/Bai3.csproj" Id="359e2f64-9518-4762-b740-1558506bd72b" />
+  <Project Path="CheckDataInDatabase/CheckDataInDatabase.csproj" Id="bb37ccce-1506-4a16-9ff8-1eb2ce967c96" />
   <Project Path="CreateDatabase/CreateDatabase.csproj" Id="2efb64ab-4bc9-4d84-8db6-8355104b2331" />
 </Solution>

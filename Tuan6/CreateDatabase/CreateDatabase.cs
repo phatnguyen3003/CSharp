@@ -116,6 +116,60 @@ public class CreateDatabase
             Console.WriteLine($"Co loi xay ra khi thuc thi: {e.Message}");
         }
 
+        string insertSampleDataQuery = @"
+            USE QLSinhVien;
+
+            IF NOT EXISTS (SELECT 1 FROM Khoa WHERE MaKhoa = 'KHOA_MAU01')
+                INSERT INTO Khoa (MaKhoa, TenKhoa) VALUES ('KHOA_MAU01', N'Công nghệ thông tin');
+            IF NOT EXISTS (SELECT 1 FROM Khoa WHERE MaKhoa = 'KHOA_MAU02')
+                INSERT INTO Khoa (MaKhoa, TenKhoa) VALUES ('KHOA_MAU02', N'Kinh tế');
+            IF NOT EXISTS (SELECT 1 FROM Khoa WHERE MaKhoa = 'KHOA_MAU03')
+                INSERT INTO Khoa (MaKhoa, TenKhoa) VALUES ('KHOA_MAU03', N'Ngoại ngữ');
+
+            IF NOT EXISTS (SELECT 1 FROM Lop WHERE MaLop = 'LOP_MAU01')
+                INSERT INTO Lop (MaLop, TenLop, MaKhoa) VALUES ('LOP_MAU01', N'Công nghệ phần mềm', 'KHOA_MAU01');
+            IF NOT EXISTS (SELECT 1 FROM Lop WHERE MaLop = 'LOP_MAU02')
+                INSERT INTO Lop (MaLop, TenLop, MaKhoa) VALUES ('LOP_MAU02', N'An toàn thông tin', 'KHOA_MAU01');
+            IF NOT EXISTS (SELECT 1 FROM Lop WHERE MaLop = 'LOP_MAU03')
+                INSERT INTO Lop (MaLop, TenLop, MaKhoa) VALUES ('LOP_MAU03', N'Quản trị kinh doanh', 'KHOA_MAU02');
+
+            IF NOT EXISTS (SELECT 1 FROM SinhVien WHERE MaSinhVien = 'SV_MAU01')
+                INSERT INTO SinhVien (MaSinhVien, HoTen, NgaySinh, MaLop)
+                VALUES ('SV_MAU01', N'Nguyễn An', '2004-03-15', 'LOP_MAU01');
+            IF NOT EXISTS (SELECT 1 FROM SinhVien WHERE MaSinhVien = 'SV_MAU02')
+                INSERT INTO SinhVien (MaSinhVien, HoTen, NgaySinh, MaLop)
+                VALUES ('SV_MAU02', N'Trần Bình', '2003-08-21', 'LOP_MAU02');
+            IF NOT EXISTS (SELECT 1 FROM SinhVien WHERE MaSinhVien = 'SV_MAU03')
+                INSERT INTO SinhVien (MaSinhVien, HoTen, NgaySinh, MaLop)
+                VALUES ('SV_MAU03', N'Lê Chi', '2004-11-02', 'LOP_MAU03');
+
+            IF NOT EXISTS (SELECT 1 FROM MonHoc WHERE MaMonHoc = 'MH_MAU01')
+                INSERT INTO MonHoc (MaMonHoc, TenMonHoc) VALUES ('MH_MAU01', N'Cơ sở dữ liệu');
+            IF NOT EXISTS (SELECT 1 FROM MonHoc WHERE MaMonHoc = 'MH_MAU02')
+                INSERT INTO MonHoc (MaMonHoc, TenMonHoc) VALUES ('MH_MAU02', N'Lập trình C#');
+            IF NOT EXISTS (SELECT 1 FROM MonHoc WHERE MaMonHoc = 'MH_MAU03')
+                INSERT INTO MonHoc (MaMonHoc, TenMonHoc) VALUES ('MH_MAU03', N'Toán rời rạc');
+
+            IF NOT EXISTS (SELECT 1 FROM Diem WHERE MaSinhVien = 'SV_MAU01' AND MaMonHoc = 'MH_MAU01')
+                INSERT INTO Diem (MaSinhVien, MaMonHoc, Diem) VALUES ('SV_MAU01', 'MH_MAU01', 8.5);
+            IF NOT EXISTS (SELECT 1 FROM Diem WHERE MaSinhVien = 'SV_MAU01' AND MaMonHoc = 'MH_MAU02')
+                INSERT INTO Diem (MaSinhVien, MaMonHoc, Diem) VALUES ('SV_MAU01', 'MH_MAU02', 9.0);
+            IF NOT EXISTS (SELECT 1 FROM Diem WHERE MaSinhVien = 'SV_MAU02' AND MaMonHoc = 'MH_MAU01')
+                INSERT INTO Diem (MaSinhVien, MaMonHoc, Diem) VALUES ('SV_MAU02', 'MH_MAU01', 7.5);
+            IF NOT EXISTS (SELECT 1 FROM Diem WHERE MaSinhVien = 'SV_MAU03' AND MaMonHoc = 'MH_MAU03')
+                INSERT INTO Diem (MaSinhVien, MaMonHoc, Diem) VALUES ('SV_MAU03', 'MH_MAU03', 8.0);
+        ";
+
+        try
+        {
+            Console.WriteLine("Dang them du lieu mau vao cac bang...");
+            await helper.ExecuteNonQueryAsync(insertSampleDataQuery);
+            Console.WriteLine("Da them du lieu mau (cac ban ghi da ton tai duoc bo qua).");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Loi khi them du lieu mau: {e.Message}");
+        }
 
 
 

@@ -7,6 +7,7 @@
   <Project Path="Bai4/Bai4.csproj" Id="81e2e713-6b85-401a-9e20-24bea00c8977" />
   <Project Path="Bai5/Bai5.csproj" Id="1c7efb98-3cce-4fe9-bfda-c5f8548fa605" />
   <Project Path="Bai6/Bai6.csproj" Id="b8edfbff-3f27-4b9e-be3d-706eee8bcb78" />
+  <Project Path="Bai7/Bai7.csproj" Id="89513414-bfd0-4a23-a142-9d70e5e36b26" />
   <Project Path="CheckDataInDatabase/CheckDataInDatabase.csproj" Id="bb37ccce-1506-4a16-9ff8-1eb2ce967c96" />
   <Project Path="CreateDatabase/CreateDatabase.csproj" Id="2efb64ab-4bc9-4d84-8db6-8355104b2331" />
 </Solution>
